@@ -2,7 +2,7 @@
   ansible.builtin.copy:
     src: rabbitmq.repo
     dest: /etc/yum.repos.d/rabbitmq.repo
-    
+
 - name: install rabbitmq
   ansible.builtin.dnf:
     name: rabbitmq-server
@@ -16,8 +16,8 @@
 
 - name: create rabbitmq user
   community.rabbitmq.rabbitmq_user:
-    user: {{ ROBOSHOP_USER }}
-    password: {{ ROBOSHOP_PASSWORD }}
+    user: "{{ ROBOSHOP_USER }}"
+    password: "{{ ROBOSHOP_PASSWORD }}"
     permissions:
       - vhost: /
         configure_priv: .*
