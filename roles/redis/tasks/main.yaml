@@ -1,0 +1,25 @@
+- name: enable nodejs
+  ansible.builtin.command: dnf module enable redis:7 -y
+
+- name: installing mongodb
+  ansible.builtin.dnf:
+    name: redis
+    state: present
+
+- name: allow port for redis
+  ansible.builtin.replace:
+    path: /etc/redis/redis.conf
+    regexp: "127.0.0.1"
+    replace: "0.0.0.0"
+
+- name: allow port for redis
+  ansible.builtin.lineinfile:
+    path: /etc/redis/redis.conf
+    regexp: "protected-mode"
+    line: "protected-mode no"
+
+- name: Start and enable redis
+  ansible.builtin.service:
+    name: redis
+    enabled: yes
+    state: restarted
