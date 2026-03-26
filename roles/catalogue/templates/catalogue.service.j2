@@ -1,15 +1,14 @@
 [Unit]
-Description=Catalogue Service
-After=network.target
+Description = Catalogue Service
 
 [Service]
 User=roboshop
 Environment=MONGO=true
+// highlight-start
 Environment=MONGO_URL="mongodb://{{ MONGODB_HOST }}:27017/catalogue"
-WorkingDirectory=/app
+// highlight-end
 ExecStart=/bin/node /app/server.js
 SyslogIdentifier=catalogue
-Restart=always
 
 [Install]
 WantedBy=multi-user.target
