@@ -5,8 +5,8 @@ REDIS_HOST: redis-dev.ptdevops.online
 MYSQL_HOST: mysql-dev.ptdevops.online
 RABBITMQ_HOST: rabbitmq-dev.ptdevops.online
 
-#CATALOGUE_HOST: catalougue.backend-alb-dev.ptdevops.online
-CATALOGUE_HOST: catalogue.backend-alb-dev.ptdevops.online
+CATALOGUE_HOST: catalougue.backend-alb-dev.ptdevops.online
+#CATALOGUE_HOST: catalogue.backend-alb-dev.ptdevops.online
 USER_HOST: user.backend-alb-dev.ptdevops.online
 CART_HOST: cart.backend-alb-dev.ptdevops.online
 SHIPPING_HOST: shipping.backend-alb-dev.ptdevops.online
