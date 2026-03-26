@@ -5,10 +5,10 @@ After=network.target
 [Service]
 User=roboshop
 Environment=MONGO=true
-Environment=MONGO_URL=mongodb://{{ MONGODB_HOST }}:27017/catalogue
+Environment=MONGO_URL="mongodb://{{ MONGODB_HOST }}:27017/catalogue"
 WorkingDirectory=/app
 ExecStart=/bin/node /app/server.js
-SyslogIdentifier=Catalogue
+SyslogIdentifier=catalogue
 Restart=always
 
 [Install]
